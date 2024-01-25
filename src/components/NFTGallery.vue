@@ -3,6 +3,7 @@
     <div class="col-md-4 mb-3" v-for="(nft, index) in nfts" :key="index">
       <router-link :to="{ name: 'View', query: { nftUrl: nft.nftUrl } }">
         <img :src="nft.thumbnail" class="img-fluid" :alt="nft.name" />
+        <h4 class="text-center">{{nft.name}}</h4>
       </router-link>
     </div>
   </div>
