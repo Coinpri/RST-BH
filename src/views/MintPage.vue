@@ -11,7 +11,7 @@
       <ol class="list-group list-group-numbered">
         <li class="list-group-item">Add RoseTea Rollapp to MetaMask using the above button.</li>
         <li class="list-group-item">
-          <a href="link-to-dymension-discord" target="_blank">Get some RST tokens from the Dymension discord faucet</a>.
+          <a href="https://discord.gg/dymension" target="_blank">Get some RST tokens from the Dymension discord faucet</a>.
           <div class="command-instruction mt-2">
             <p>Go to the <b>#froopyland-faucet</b> channel and enter:</p>
             <code>$request &lt;Your wallet address&gt; rosetea_1150924-1</code>
@@ -24,7 +24,7 @@
     
     <div class="further-info mt-5">
       <h5 class="fw-bold">To go further:</h5>
-      <p>If you want to help us reach farther into the cosmos, <a href="link-to-dymension-discord" target="_blank">get some DYM tokens from the Dymension discord faucet</a> and stake them on our DymensionHub RollApp. This will reveal more NFTs and increase the mint cap.</p>
+      <p>If you want to help us reach farther into the cosmos, <a href="https://discord.gg/dymension" target="_blank">get some DYM tokens from the Dymension discord faucet</a> and <a href="https://portal.dymension.xyz/rollapp/rosetea_1150924-1">stake them on our DymensionHub RollApp</a>. This will reveal more NFTs and increase the mint cap.</p>
     </div>
   </div>
 </template>

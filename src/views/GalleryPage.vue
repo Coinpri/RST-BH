@@ -4,7 +4,7 @@
     <p>{{ discoveredCount }} Black Holes discovered</p>
     <p>{{ unchartedCount }} Uncharted Black Holes</p>
     <p><a href="#">Help us discover more black holes</a></p>
-    <NFTGallery :nfts="nfts" />
+    <NFTGallery :tokenIds="unchartedTokenIds" />
   </div>
 </template>
 
@@ -18,8 +18,8 @@ export default {
   },
   data() {
     return {
-      nfts: [],
-      discoveredCount: 0, // Initialize your count variables
+      unchartedTokenIds: [],
+      discoveredCount: 0,
       unchartedCount: 0
     };
   },
@@ -29,45 +29,19 @@ export default {
   methods: {
     async fetchUnchartedTokenIds() {
       try {
-        const metadataBaseUrl = process.env.VUE_APP_METADATA_UNCHARTED_URL;
-        const response = await fetch(`${metadataBaseUrl}/ids.txt`);
-
+        const metadataBaseUrl = process.env.VUE_APP_METADATA_URL;
+        const response = await fetch(`${metadataBaseUrl}/uncharted.txt`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
         const text = await response.text();
-        const unchartedTokenIds = text.split('\n').filter(Boolean); // Filter out empty lines
-
-        this.unchartedCount = unchartedTokenIds.length
-
-        await Promise.all(unchartedTokenIds.map(unchartedTokenId => this.fetchMetadata(metadataBaseUrl, unchartedTokenId)));
+        this.unchartedTokenIds = text.split('\n').filter(Boolean);
+        console.log(this.unchartedTokenIds)
+        this.unchartedCount = this.unchartedTokenIds.length;
       } catch (error) {
         console.error("Failed to fetch token IDs:", error);
-        // Handle errors appropriately
-      }
-    },
-    async fetchMetadata(baseUrl, unchartedTokenId) {
-      try {
-        const response = await fetch(`${baseUrl}${unchartedTokenId}.json`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const metadata = await response.json();
-        this.nfts.push({
-          id: unchartedTokenId,
-          thumbnail: metadata.image,
-          nftUrl: metadata.animation_url,
-          name: metadata.name
-        });
-      } catch (error) {
-        console.error(`Failed to fetch metadata for token ID ${unchartedTokenId}:`, error);
-        // Handle errors appropriately
       }
     }
   }
 }
 </script>
-
-
-
