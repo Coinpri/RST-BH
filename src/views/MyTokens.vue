@@ -1,8 +1,7 @@
 <template>
   <div class="container mt-5">
     <h2>NFT Gallery</h2>
-    <p>{{ discoveredCount }} Black Holes discovered</p>
-    <p>{{ unchartedCount }} Uncharted Black Holes</p>
+    <p>You have {{ discoveredCount }} Discovered Black Holes, and {{ unchartedCount }} Uncharted Black Holes</p>
     <p><a href="#">Help us discover more black holes</a></p>
     <NFTGallery :nfts="nfts" />
   </div>
@@ -12,7 +11,7 @@
 import NFTGallery from '@/components/NFTGallery.vue'; // Adjust path as needed
 
 export default {
-  name: 'GalleryPage',
+  name: 'MyTokens',
   components: {
     NFTGallery
   },
