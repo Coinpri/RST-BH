@@ -34,10 +34,6 @@ export default {
       nfts: []
     };
   },
-  async mounted() {
-    console.log(this.tokenIds)
-    await this.fetchMetadata();
-  },
   methods: {
     async fetchMetadata() {
       const metadataBaseUrl = process.env.VUE_APP_METADATA_URL;
