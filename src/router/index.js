@@ -17,7 +17,7 @@ const routes = [
     component: GalleryPage
   },
   {
-    path: '/view/',
+    path: '/view/:tokenId?',
     name: 'View',
     component: ViewPage,
   },

@@ -1,9 +1,10 @@
 <template>
   <div class="row">
     <div class="col-md-4 mb-3" v-for="(nft, index) in nfts" :key="index">
-      <router-link :to="{ name: 'View', query: { nftUrl: nft.nftUrl } }">
+      <!-- Updated router-link to pass tokenId -->
+      <router-link :to="{ name: 'View', params: { tokenId: nft.id } }">
         <img :src="nft.thumbnail" class="img-fluid" :alt="nft.name" />
-        <h4 class="text-center">{{nft.name}}</h4>
+        <h4 class="text-center">{{ nft.name }}</h4>
       </router-link>
     </div>
   </div>
@@ -46,6 +47,7 @@ export default {
         console.error("Failed to fetch NFT metadata:", error);
       }
     },
+    
     async fetchNFT(baseUrl, tokenId) {
       try {
         const response = await fetch(`${baseUrl}${tokenId}.json`);
@@ -54,10 +56,10 @@ export default {
         }
         const metadata = await response.json();
         this.nfts.push({
-          id: tokenId,
-          thumbnail: metadata.image,
-          nftUrl: metadata.animation_url,
-          name: metadata.name
+          id: tokenId, // Ensure this represents the tokenId
+          thumbnail: metadata.image, // Thumbnail URL
+          name: metadata.name // NFT name
+          // Removed nftUrl as it's no longer directly used
         });
       } catch (error) {
         console.error(`Failed to fetch metadata for token ID ${tokenId}:`, error);
