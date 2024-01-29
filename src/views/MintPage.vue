@@ -25,7 +25,10 @@
       <div class="alert alert-warning mt-4" role="alert">
         <strong>Notice:</strong> Each address is only permitted to mint a single NFT.
       </div>
-      <MintButton :isDisabled="!isWalletConnected" class="btn-lg mt-3" />
+      <div class="alert alert-danger mt-4" role="alert">
+        <strong>Avail network down</strong><br>Due to instability on the Goldberg Avail testnet, minting is currently disabled. It will be re-enabled as soon as the Avail network stabilizes. For more information, please visit <a href="https://discord.com/invite/y6fHnxZQX8" target="_blank">the official Avail discord</a>.
+      </div>
+      <MintButton :isDisabled="true" class="btn-lg mt-3" />
     </div>
     
     <div class="further-info mt-5">
