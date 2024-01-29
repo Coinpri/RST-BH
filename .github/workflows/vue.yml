@@ -1,15 +1,29 @@
-name: Build Vue
-on: [push]
+name: Deploy Vue 3 Project to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # or master, depending on your default branch
+
 jobs:
-  build_vue:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: Build Vue
     steps:
     - uses: actions/checkout@v2
-    - id: Build-Vue
-      uses: xRealNeon/VuePagesAction@1.0.1
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
       with:
-        username: 'guillheu'
-        reponame: 'RST-BH'
-        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-        cname: "rosetea.xyz"
+        node-version: 'v20.10.0'  # Use the Node.js version your project requires
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages  # The branch the action should deploy to.
+        folder: dist  # The folder the action should deploy.
