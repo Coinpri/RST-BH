@@ -60,7 +60,7 @@
     </div>
       </div>
     </div>
-
+<!--
     <div class="row my-5">
       <div class="col-md-6">
         <h3 class="h5">Progress to Next Reveal</h3>
@@ -84,6 +84,7 @@
         <a href="#" class="text-decoration-none">Learn more on DymensionHub</a>
       </p>
     </div>
+    -->
   </div>
 </template>
 
