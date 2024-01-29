@@ -16,6 +16,9 @@
             <li class="nav-item">
                 <router-link class="nav-link" to="/my-tokens">My Tokens</router-link>
             </li>
+            <li class="nav-item">
+                <a id="coinpri-link" class="nav-link" target="_blank" href="https://coinpri.com" style="color: #b800ff" >Made by the Coinpri team</a>
+            </li>
             <AddToMetaMaskButton />
       
         </ul>
@@ -37,5 +40,4 @@ export default {
 </script>
 
 <style>
-/* Add any additional styling for your navbar here */
 </style>
