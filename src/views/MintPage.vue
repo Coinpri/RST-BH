@@ -14,11 +14,7 @@
       <ol class="list-group list-group-numbered">
         <li class="list-group-item">Add RoseTea Rollapp to MetaMask and connect your MetaMask wallet using the above buttons.</li>
         <li class="list-group-item">
-          <a href="https://discord.gg/dymension" target="_blank">Get some RST tokens from the Dymension discord faucet</a>.
-          <div class="command-instruction mt-2">
-            <p>Go to the <b>#froopyland-faucet</b> channel and enter:</p>
-            <code>$request &lt;Your wallet address&gt; rosetea_1150924-1</code>
-          </div>
+          <a href="https://faucet.rosetea.xyz" target="_blank">Get some RST tokens from our faucet</a>.
         </li>
         <li class="list-group-item">Mint your token!</li>
       </ol>

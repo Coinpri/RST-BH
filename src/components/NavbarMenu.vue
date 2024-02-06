@@ -17,6 +17,9 @@
                 <router-link class="nav-link" to="/my-tokens">My Tokens</router-link>
             </li>
             <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://faucet.rosetea.xyz">Faucet</a>
+            </li>
+            <li class="nav-item">
                 <a id="coinpri-link" class="nav-link" target="_blank" href="https://coinpri.com" style="color: #b800ff" >Made by the Coinpri team</a>
             </li>
             <AddToMetaMaskButton />
