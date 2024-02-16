@@ -48,7 +48,6 @@ export default {
 
     // If hasMinted is false, proceed with minting
     const tx = await contract.safeMint(toAddress);
-    await tx.wait(); // Wait for the transaction to be mined
 
     console.log(`NFT minted successfully. Transaction Hash: ${tx.hash}`);
   } catch (error) {
